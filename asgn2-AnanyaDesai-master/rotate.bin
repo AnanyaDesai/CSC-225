@@ -1,0 +1,13 @@
+; Rotates the bits of the value at 0x3050 left once.
+; CSC 225, Assignment 2
+; Given code, Winter '20
+
+0011 0000 0000 0000     ; Start at 0x3000.
+0010 000 0 0100 1111    ; Loading x3050 into R0
+0001 001 000 0 00 000   ; ADD, R0, R0, R1
+0001 000 000 1 00000    ; Copying R0 to R0
+0000 011 000000001      ; if R0 is negative
+0001 001 001 1 00001    ; ADD, R1, R1, #1
+0011 001 0 0100 1010    ; Store R1 at x3050
+1111 0000 00 100 101    ; HALT
+
